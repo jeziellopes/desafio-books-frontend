@@ -15,7 +15,8 @@ export const Container = styled(Row)`
 `;
 
 export const InputContainer = styled(Column)`
-  // specific container styles
+  margin-right: 16px;
+  width: 100%;
 `;
 
 export const ActionContainer = styled(Column)`
