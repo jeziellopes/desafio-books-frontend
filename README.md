@@ -1,62 +1,62 @@
 # Sobre
 
-Estes documento README tem como objetivo fornecer as informaÃ§Ãµes necessÃ¡rias para realizaÃ§Ã£o do projeto **ioasys books**.
+Estes documento README tem como objetivo fornecer as informações necessárias para realização do projeto **ioasys books**.
 
-# ðŸ— O que fazer?
+# 🏗 O que fazer?
 
-- VocÃª deve criar seu projeto e subir em um repositÃ³rio e ao finalizar, enviar o link do seu repositÃ³rio para a nossa equipe. Lembre-se, NÃƒO Ã© necessÃ¡rio criar um Pull Request para isso, nÃ³s iremos avaliar e retornar por email o resultado do seu teste.
+- Você deve criar seu projeto e subir em um repositório e ao finalizar, enviar o link do seu repositório para a nossa equipe. Lembre-se, NÃO é necessário criar um Pull Request para isso, nós iremos avaliar e retornar por email o resultado do seu teste.
 
-# ðŸš¨ Requisitos
+# 🚨 Requisitos
 
-- Seu projeto deverÃ¡ ser construÃ­do utilizando **ReactJS** ou **Angular**.
-- Seu projeto deverÃ¡ ser construÃ­do utilizando o layout disponibilizado na descriÃ§Ã£o do teste.
-- A integraÃ§Ã£o com a API deve ser feita respeitando todos os contratos de OAuth.
-- Projetos utilizando **ReactJS** serÃ£o aceitos testes somente em **JavaScript** buscando avaliar o entendimento completo da linguagem e nÃ£o de estruturas ou dependÃªncias que abstraiam determinadas definiÃ§Ãµes nÃ£o alheias ao ECMAScript.
+- Seu projeto deverá ser construído utilizando **ReactJS** ou **Angular**.
+- Seu projeto deverá ser construído utilizando o layout disponibilizado na descrição do teste.
+- A integração com a API deve ser feita respeitando todos os contratos de OAuth.
+- Projetos utilizando **ReactJS** serão aceitos testes somente em **JavaScript** buscando avaliar o entendimento completo da linguagem e não de estruturas ou dependências que abstraiam determinadas definições não alheias ao ECMAScript.
 
-# ðŸ•µðŸ»â€â™‚ï¸ Itens a serem avaliados
+# 🕵🏻‍♂️ Itens a serem avaliados
 
 - Estrutura do Projeto
-- Boas prÃ¡ticas da Linguagem/Framework
-- IntegraÃ§Ã£o com API
+- Boas práticas da Linguagem/Framework
+- Integração com API
 - Bibliotecas utilizadas
-- EstilizaÃ§Ã£o dos componentes
-- PersistÃªncia de login
+- Estilização dos componentes
+- Persistência de login
 - Layout responsivo
 - Friendly URL
-- Seu projeto deverÃ¡ seguir tudo o que foi exigido na seÃ§Ã£o **O que desenvolver?**
+- Seu projeto deverá seguir tudo o que foi exigido na seção **O que desenvolver?**
 
-# ðŸŽ Extra
+# 🎁 Extra
 
-Esses itens nÃ£o obrigatÃ³rios, porÃ©m desejados.
+Esses itens não obrigatórios, porém desejados.
 
-- Testes unitÃ¡rios
+- Testes unitários
 - SEO
 - Linter
 - Code Formater
-- DocumentaÃ§Ã£o de componente
+- Documentação de componente
 
-# ðŸ–¥ O que desenvolver?
+# 🖥 O que desenvolver?
 
-VocÃª deverÃ¡ construir um projeto utilizando o layout proposto
+Você deverá construir um projeto utilizando o layout proposto
 
-- Login e acesso de UsuÃ¡rio jÃ¡ registrado
-  - Para o login usamos padrÃµes OAuth 2.0. Na resposta de sucesso do login a api retornarÃ¡ 3 custom headers (access-token, client, uid);
-  - Para ter acesso as demais APIs precisamos enviar o 'authorization' no header para autorizar a requisiÃ§Ã£o;
+- Login e acesso de Usuário já registrado
+  - Para o login usamos padrões OAuth 2.0. Na resposta de sucesso do login a api retornará 3 custom headers (access-token, client, uid);
+  - Para ter acesso as demais APIs precisamos enviar o 'authorization' no header para autorizar a requisição;
 - Listagem de Livros
 - Detalhamento do Livro
 
-# ðŸ”— Links e InformaÃ§Ãµes Importantes
+# 🔗 Links e Informações Importantes
 
 ## Layout
 
-- Layout e recortes disponÃ­veis no Figma
+- Layout e recortes disponíveis no Figma
 - https://www.figma.com/file/YXuqJUzNZcR7GveJfVWCKo/Desafio-Frontend-ioasys-books
 
-## IntegraÃ§Ã£o com API
+## Integração com API
 
-- A documentaÃ§Ã£o da API estÃ¡ disponÃ­vel a partir de uma pÃ¡gina web (https://books.ioasys.com.br/api/docs/).
+- A documentação da API está disponível a partir de uma página web (https://books.ioasys.com.br/api/docs/).
 
-- **DocumentaÃ§Ã£o:** https://books.ioasys.com.br/api/docs/
+- **Documentação:** https://books.ioasys.com.br/api/docs/
 - **Servidor:** https://books.ioasys.com.br/api/v1
-- **UsuÃ¡rio de Teste:** desafio@ioasys.com.br
+- **Usuário de Teste:** desafio@ioasys.com.br
 - **Senha de Teste:** 12341234
