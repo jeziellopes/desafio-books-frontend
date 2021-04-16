@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import Form from '../services/form';
 
+/**
+ * Validate and store form fields
+ */
 const useForm = (callback = (values) => {}) => {
 
   const [values, setValues] = useState({ email: '', password: '' });
   const [error, setError] = useState(false);
   const [isEmpty, setIsEmpty] = useState(true);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   /**
    * Check if the form is empty  
    */
   useEffect(() => {
-    setIsEmpty(!Object
-      .values(values)
+    setIsEmpty(!Object.values(values)
       .some(value => value !== ''))
   }, [values])
 
@@ -23,14 +24,6 @@ const useForm = (callback = (values) => {}) => {
   useEffect(() => {
     setError(!Form.validate(values) && !isEmpty)
   }, [isEmpty, values]);
-  
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault();
-    if (!error && !isEmpty) {
-      setIsSubmitting(true);
-      callback(values)
-    }
-  }
 
   const handleChange = (event) => {
     setValues(values => ({
@@ -41,8 +34,7 @@ const useForm = (callback = (values) => {}) => {
 
   return {
     handleChange,
-    handleSubmit,
-    isSubmitting,
+    validated: !error && !isEmpty,
     values,
     error
   }

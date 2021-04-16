@@ -1,21 +1,24 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import SignIn from "./pages/sign-in";
+import { useAuth } from './hooks';
 
-import Auth from "./services/auth";
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { signed } = useAuth();
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      Auth.isAuthenticated() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to={{ pathname: "/sign-in", state: { from: props.location } }} />
-      )
-    }
-  />
-);
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        signed ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/sign-in", state: { from: props.location } }} />
+        )
+      }
+    />
+  );
+}
 
 const Routes = () => (
   <BrowserRouter>

@@ -1,20 +1,49 @@
-import React from 'react'
+import React, { useEffect }from 'react'
 import { SignInContainer, SignInForm, SignInHeader, Title, SignInInputs } from './styles';
 import { Logo, FormError, TextInput } from '../../components';
-import useForm from '../../hooks/useForm';
+import { useAuth, useForm } from '../../hooks';
 
 /**
  * SignIn Page
  * 
  * @returns {React.Component}
  */
-const SignIn = () => {
+const SignIn = ({ history }) => {
+  const { signed, signIn } = useAuth();
   const {
-    values,
+    values: { email, password },
     error,
+    validated,
     handleChange,
-    handleSubmit
-  } = useForm((values) => console.log(values))
+  } = useForm();
+
+  /**
+   * Allow form submit by pressing Ender key
+   */
+  useEffect(() => {
+    const listener = e => {
+      if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+        e.preventDefault();
+        handleSignIn();
+      }
+    }
+    document.addEventListener('keydown', listener)
+    return () => document.removeEventListener('keydown', listener);
+  })
+
+  /**
+   * If is signed redirect to main url
+   */
+  useEffect(() => {
+    if (signed) history.push('/');
+  }, [history, signed])
+
+  /**
+   * If is validated and not signed yet, call signIn
+   */
+  const handleSignIn = () => {
+    if (validated && !signed) signIn(email, password)
+  }
 
   return (
     <SignInContainer>
@@ -28,16 +57,16 @@ const SignIn = () => {
             <TextInput
               type='email'
               label={'Email'}
-              value={values.email}
+              value={email}
               onChange={handleChange}
             />      
             <TextInput
               type='password'
               label={'Senha'}
-              value={values.password}
+              value={password}
               onChange={handleChange}
               // this input can additionally submit the form
-              onSubmit={handleSubmit}
+              onSubmit={handleSignIn}
             />            
           </SignInInputs>
           
