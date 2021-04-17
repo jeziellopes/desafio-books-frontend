@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row, Column } from '../../components/Common';
+import { Column } from '../../components/Common';
 import background from '../../assets/images/background.png';
 
 export const SignInContainer = styled.div`
@@ -12,12 +12,18 @@ export const SignInContainer = styled.div`
   background-size: cover;
   background-size: cover;
   height: 100%;
-`;
 
-export const SignInHeader = styled(Row)`
-  height: 40px;
-  width: 198.4px;
-  margin-bottom: 32px;
+  @media (min-width: 320px) {
+    background-position: 41.5%;
+  }
+
+  @media (min-height: 700px) {
+    background-position: 46%;
+  }
+
+  @media (height: 568px) {
+    background-position: 40%;
+  }
 `;
 
 export const SignInForm = styled.div`
@@ -35,20 +41,15 @@ export const SignInForm = styled.div`
     width: 368px;
   }
 
+  @media (min-width: 540) {
+    width: 308px;
+  }
+
   @media (max-width: 600px) {
     margin-left: 0px;
     padding: 16px;
     margin: 0;
   }
-`;
-
-export const Title = styled.label`
-  color: white;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 28px;
-  line-height: 36px;
-  margin-left: 17px;
 `;
 
 export const SignInInputs = styled(Column)`

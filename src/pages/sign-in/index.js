@@ -1,7 +1,9 @@
 import React, { useEffect }from 'react'
-import { SignInContainer, SignInForm, SignInHeader, Title, SignInInputs } from './styles';
+import { SignInContainer, SignInForm, SignInInputs } from './styles';
+import { LogoHeader, LogoTitle } from '../../components/Common';
 import { Logo, FormError, TextInput } from '../../components';
-import { useAuth, useForm } from '../../hooks';
+import { useAuth, useForm, useEventListener } from '../../hooks';
+import keyDownHandler from '../../utils/handler';
 
 /**
  * SignIn Page
@@ -20,16 +22,7 @@ const SignIn = ({ history }) => {
   /**
    * Allow form submit by pressing Ender key
    */
-  useEffect(() => {
-    const listener = e => {
-      if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-        e.preventDefault();
-        handleSignIn();
-      }
-    }
-    document.addEventListener('keydown', listener)
-    return () => document.removeEventListener('keydown', listener);
-  })
+  useEventListener("keydown", (e) => keyDownHandler(e, handleSignIn));
 
   /**
    * If is signed redirect to main url
@@ -48,10 +41,10 @@ const SignIn = ({ history }) => {
   return (
     <SignInContainer>
         <SignInForm>
-          <SignInHeader>
+          <LogoHeader>
             <Logo light/>
-            <Title>Books</Title>
-          </SignInHeader>
+            <LogoTitle light>Books</LogoTitle>
+          </LogoHeader>
 
           <SignInInputs>
             <TextInput

@@ -1,13 +1,12 @@
 import Books from './books';
-import { booksResponseMock, bookResponseMock } from '../mocks/books_mock';
 
-test('deve retornar uma lista de livros', async () => {
-  const booksResponse = await Books.showAll();
-  expect(booksResponse).toStrictEqual(booksResponseMock);
+test('deve recuperar os parâmetros enviados na requisição', async () => {
+  const params = { page: 1, amount: 20 };
+  const response = await Books.showAll(params);
+  expect(response.config.params).toStrictEqual(params);
 });
 
-
-test('deve retornar um livro', async () => {
-  const booksResponse = await Books.show('60171639faf5de22b804a054');
-  expect(booksResponse).toStrictEqual(bookResponseMock);
+test('deve retornar status code 401 - Unauthorized', async () => {
+  const response = await Books.show('anyid');
+  expect(response.status).toStrictEqual(401);
 });

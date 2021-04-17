@@ -11,14 +11,26 @@ api.interceptors.request.use(async config => {
   return config;
 });
 
+export const getAxiosConfig = (params = {}) => {
+  const token = Auth.getToken();
+  return {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    params
+  } 
+}
+
 const apiClient = {
   auth: {
-    signIn: (payload) => api.post('/auth/sign-in', payload),
-    refreshToken: (payload) => api.post('/auth/refresh-token', payload)
+    signIn: (data) => api.post('/auth/sign-in', data),
+    refreshToken: (data) => api.post('/auth/refresh-token', data)
   },
   books: {
-    showAll: () => api.get('/books'),
-    show: (id) => api.get(`/books/${id}`)
+    showAll: (params) => api.get('/books', getAxiosConfig(params)),
+    show: (id) => api.get(`/books/${id}`, getAxiosConfig())
   }
 }
 

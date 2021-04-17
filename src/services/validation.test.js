@@ -4,7 +4,7 @@ import Validation from './validation';
  * Email Validation Tests
  */
 
-test('deve retornar falso na validação de email não válido', () => {
+test('deve retornar false na validação de email não válido', () => {
   const email = 'notvalidemail';
   const isValidEmail = Validation.isValidEmail(email);
   expect(isValidEmail).toStrictEqual(false);
@@ -32,7 +32,7 @@ test('deve retornar false na validação de email contendo mais de um subdomíni
  * Password Validation Tests
  */
 
-test('deve returnar false na validação de uma senha de 7 digitos', () => {
+test('deve retornar false na validação de uma senha de 7 digitos', () => {
   const password = '1234567';
   const isValidPassword = Validation.isValidPassword(password);
   expect(isValidPassword).toStrictEqual(false);

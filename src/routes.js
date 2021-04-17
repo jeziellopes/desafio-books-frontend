@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import SignIn from "./pages/sign-in";
+import { SignIn, Books } from "./pages";
 import { useAuth } from './hooks';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -24,7 +24,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/sign-in" component={SignIn} />
-      <PrivateRoute path="/" component={() => <div>App</div>} />
+      <PrivateRoute path="/" component={Books} />
       <Route path="*" component={() => <div>Page not found</div>} />
     </Switch>
   </BrowserRouter>

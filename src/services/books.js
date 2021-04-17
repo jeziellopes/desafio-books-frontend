@@ -1,26 +1,52 @@
-import { booksResponseMock } from '../mocks/books_mock';
+import apiClient from './api';
 
+/**
+ * Books services
+ */
 class Books {
-  static showAll(): Promise {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(booksResponseMock);
-      }, 1000);
-    });
+
+  /**
+   * Sholl all books
+   */
+  static async showAll(params) {
+    try {
+      const response = await apiClient.books.showAll(params);
+
+      if (response.status === 200) {
+        return response.data
+      } else {
+        // handle not success response
+        return response.data
+      }
+
+    } catch (err) {
+      // handle error response
+      return err.response
+    }
   }
 
-  static show(id: string): Promise {
-    return new Promise((resolve) => {
-      setTimeout(
-        () =>
-          resolve(
-            booksResponseMock.data.find(
-              (book) => book.id === '60171639faf5de22b804a054'
-            ) ?? {}
-          ),
-        1000
-      );
-    });
+  /**
+   * Show user by id
+   * 
+   * @param {string} id
+   * @returns 
+   */
+  static async show(id: string) {
+    try {
+      const response = await apiClient.books.show(id);
+
+      if (response.status === 200) {
+        return response.data;
+      } else {
+        // handle not success response
+        return response.data;
+      }
+
+    } catch (err) {
+      // handle error response
+      return err.response
+    }
+    
   }
 }
 
