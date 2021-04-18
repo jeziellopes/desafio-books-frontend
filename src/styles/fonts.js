@@ -49,13 +49,6 @@ const defaultFonts = css`
 
   @font-face {
     font-family: 'Heebo';
-    font-weight: 800;
-    src: url('/assets/fonts/heebo/Heebo-Bold.ttf') format('truetype');
-    -webkit-font-smoothing: antialiased;
-  }
-
-  @font-face {
-    font-family: 'Heebo';
     font-weight: 900;
     src: url('/assets/fonts/heebo/Heebo-Black.ttf') format('truetype');
     -webkit-font-smoothing: antialiased;

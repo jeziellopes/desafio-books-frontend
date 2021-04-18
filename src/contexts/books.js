@@ -1,24 +1,29 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import Books from '../services/books';
 
 const BooksContext = createContext({});
 
 export const BooksProvider = ({ children }) => {
+  const [params, setParams] = useState({ page: 1, amount: 12 });
   const [books, setBooks] = useState(null);
   const [book, setBook] = useState(null);
 
-  async function showBooks(params) {
-    const response = await Books.showAll(params);
-    setBooks(response);
+  useEffect(() => {
+    if (!books) showBooks()
+  })
+
+  async function showBooks() {
+    const books = await Books.showAll(params);
+    setBooks(books);
   }
 
   async function showBook(id) {
-    const response = await Books.show(id)
-    setBook(response);
+    const book = await Books.show(id)
+    setBook(book);
   }
 
   return (
-    <BooksContext.Provider value={{ books, book, showBooks, showBook }}>
+    <BooksContext.Provider value={{ books, book, showBooks, showBook, setParams }} >
       {children}
     </BooksContext.Provider>
   )

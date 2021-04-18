@@ -1,7 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
+import background from '../assets/images/background_light.png';
 import defaultFonts from './fonts';
 
 const GlobalStyle = createGlobalStyle`
+
+  html {
+    background-image: url(${background});
+    height: ${({theme}) => theme.screen.height}px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   html, body, #root {
     height: 100%;
     padding: 0;
