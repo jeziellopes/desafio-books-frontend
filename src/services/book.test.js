@@ -26,14 +26,9 @@ test('deve retornar uma lista de nomes de autores normalizados', async () => {
     'Robert Cecil Martin',
     'Erick Evans',
     'Brendan Eich',
-    'Sr. Florian Armstrong'
+    'Sr. Florian Armstrong',
   ];
-  const normalized = [
-    'Robert C. Martin,',
-    'Erick Evans, ...',
-  ];
+  const normalized = ['Robert C. Martin,', 'Erick Evans, ...'];
   const result = Book.normalizedAuthors(authors);
   expect(result).toStrictEqual(normalized);
 });
-
-

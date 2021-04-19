@@ -24,7 +24,6 @@ export const BooksContainer = styled.div`
     padding-left: ${({ theme }) => theme.booksListPadding.grid(5)}px;
     padding-right: ${({ theme }) => theme.booksListPadding.grid(5)}px;
   }
-
 `;
 
 export const BooksHeader = styled(Row)`
@@ -49,4 +48,4 @@ export const WelcomeLabel = styled.label`
 export const UserLabel = styled(WelcomeLabel)`
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   margin-right: unset;
-`
+`;

@@ -4,7 +4,7 @@ import { g as grid } from '../utils/formula';
 
 /**
  * Default Project Theme
- * 
+ *
  * @param {React.Component} children
  * @returns {React.Component}
  */
@@ -13,7 +13,6 @@ const Theme = ({ children }) => {
 
   // theme definitions
   const theme = {
-
     // dynamic screen sizes
     screen: {
       height: height,
@@ -23,19 +22,19 @@ const Theme = ({ children }) => {
     // default screen sizes
     layout: {
       width: 1366,
-      height: 768
+      height: 768,
     },
 
     // theme colors
     colors: {
-      primary: '#AB2680',         // author labels, book thumbnail
-      secondary: '#B22E6F',       // book thumbnail
+      primary: '#AB2680', // author labels, book thumbnail
+      secondary: '#B22E6F', // book thumbnail
       secondaryLight: '#D0608D',
 
-      white: '#fff',              // card background
-      darkslategray: '#333333',   // dark titles
-      darkgray: '#999999',        // descriptions
-      whitesmoke: '#F5EFF3',      // book thumbnail
+      white: '#fff', // card background
+      darkslategray: '#333333', // dark titles
+      darkgray: '#999999', // descriptions
+      whitesmoke: '#F5EFF3', // book thumbnail
 
       grayOpacity: 'rgba(255, 255, 255, 0.32)',
       blackOpacity: 'rgba(0, 0, 0, 0.32)',
@@ -46,7 +45,7 @@ const Theme = ({ children }) => {
       small: '12px',
       medium: '14px',
       large: '16px',
-      extraLarge: '28px', 
+      extraLarge: '28px',
     },
 
     // theme font-weights
@@ -70,14 +69,10 @@ const Theme = ({ children }) => {
     booksListPadding: {
       grid: (n) => grid(n, width),
     },
-  }
-  
+  };
+
   // return theme provider wrapper
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
-  )
-}
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
 
 export default Theme;

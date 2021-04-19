@@ -10,13 +10,7 @@ export default function BooksList() {
     <Container>
       {books &&
         books.data?.length &&
-        books.data.map(book => (
-          <BookCard
-            key={book.id}
-            book={book}
-          />
-        ))
-      }
+        books.data.map((book) => <BookCard key={book.id} book={book} />)}
     </Container>
-  )
+  );
 }

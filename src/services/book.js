@@ -2,32 +2,32 @@
  * Book services
  */
 class Book {
-
   /**
-   * Normalize book data 
+   * Normalize book data
    */
   static async normalizedFrom(book) {
-
     return {
       ...book,
       authors: Book.normalizedAuthors(book.authors),
-    }
+    };
   }
 
   /**
    * Returns normalized author names
-   * 
+   *
    * @param {array} authors
-   * @returns 
+   * @returns
    */
   static normalizedAuthors(authors: string[]) {
     const maxAuthors = authors.slice(0, 2);
-    return maxAuthors.map(author => (
-      `${Book.normalizedAuthor(author, 
-        maxAuthors.indexOf(author) !== maxAuthors.length - 1,
-        maxAuthors.length >= 2)
-      }`
-    ))
+    return maxAuthors.map(
+      (author) =>
+        `${Book.normalizedAuthor(
+          author,
+          maxAuthors.indexOf(author) !== maxAuthors.length - 1,
+          maxAuthors.length >= 2
+        )}`
+    );
   }
 
   static normalizedAuthor(
@@ -35,7 +35,6 @@ class Book {
     isLast: boolean,
     manyAuthors: boolean
   ) {
-
     if (author.length <= 2) {
       return author;
     }
@@ -43,23 +42,25 @@ class Book {
     const firstName = author.split(' ')[0];
     const lastName = author.split(' ').slice(-1);
 
-    const middleNames = author.split(' ').slice(1, -1)
-      .filter(name => name !== 'de')
-      .map(name => name[0]);
+    const middleNames = author
+      .split(' ')
+      .slice(1, -1)
+      .filter((name) => name !== 'de')
+      .map((name) => name[0]);
 
-    return `${firstName} ${middleNames}${middleNames.length
-      ? '. ' : ''}${lastName}${isLast
-        ? ',' : manyAuthors ? ', ...' : ''}`;
+    return `${firstName} ${middleNames}${
+      middleNames.length ? '. ' : ''
+    }${lastName}${isLast ? ',' : manyAuthors ? ', ...' : ''}`;
   }
 
   /**
    * Check if book has more then one author
-   * 
+   *
    * @param {string} publisher
-   * @returns 
+   * @returns
    */
   static hasManyAuthors(book: object) {
-    return book.authors.length > 1
+    return book.authors.length > 1;
   }
 }
 

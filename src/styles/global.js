@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     background-image: url(${background});
-    height: ${({theme}) => theme.screen.height}px;
+    height: ${({ theme }) => theme.screen.height}px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -32,6 +32,6 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     padding: 0;
   }
-`
+`;
 
 export default GlobalStyle;

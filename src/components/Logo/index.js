@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 /**
  * React Component for Logo SVG
- * 
- * @param {boolean} light change the logo color 
+ *
+ * @param {boolean} light change the logo color
  * @returns {React.Component}
  */
 

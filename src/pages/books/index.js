@@ -2,25 +2,24 @@ import React from 'react';
 import { Logo } from '../../components';
 import { LogoHeader, LogoTitle } from '../../components/Common';
 import { UserHeader, BooksList, Pagination } from '../../containers';
-import { BooksProvider } from '../../contexts/books';
+import { BooksProvider } from '../../providers';
 import { BooksContainer, BooksHeader } from './styles';
 
 const Books = () => (
   <BooksContainer>
     <BooksHeader>
       <LogoHeader>
-        <Logo/>
+        <Logo />
         <LogoTitle>Books</LogoTitle>
       </LogoHeader>
-  
-      <UserHeader/>
 
+      <UserHeader />
     </BooksHeader>
     <BooksProvider>
-      <BooksList/>
-      <Pagination/>
+      <BooksList />
+      <Pagination />
     </BooksProvider>
   </BooksContainer>
-)
+);
 
-export default Books
+export default Books;

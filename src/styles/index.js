@@ -1,7 +1,4 @@
-import { fadeAnimations } from "./animations";
-import GlobalStyle from "./global";
+import { fadeAnimations } from './animations';
+import GlobalStyle from './global';
 
-export {
-  GlobalStyle,
-  fadeAnimations,
-}
+export { GlobalStyle, fadeAnimations };

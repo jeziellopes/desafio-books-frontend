@@ -9,22 +9,20 @@ import {
   BookAuthor,
   BookInformations,
   BookDetails,
- } from './styles';
+} from './styles';
 
 export default function BookCard({ book }) {
-
   return (
     <Container>
-      <BookCover src={book.imageUrl}/>
+      <BookCover src={book.imageUrl} />
       <BookInformations>
         <Column>
           <BookTile useOverflow={Book.hasManyAuthors(book)}>
             {book.title}
           </BookTile>
-          {Book.normalizedAuthors(book.authors)
-            .map(author =>
+          {Book.normalizedAuthors(book.authors).map((author) => (
             <BookAuthor key={btoa(author)}>{author}</BookAuthor>
-          )}
+          ))}
         </Column>
         <Column>
           <BookDetails>{book.pageCount} páginas</BookDetails>

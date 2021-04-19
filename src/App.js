@@ -6,9 +6,9 @@ import { AuthProvider, ThemeProvider } from './providers';
 function App() {
   return (
     <ThemeProvider>
-      <GlobalStyle/>
+      <GlobalStyle />
       <AuthProvider>
-        <Routes/>
+        <Routes />
       </AuthProvider>
     </ThemeProvider>
   );

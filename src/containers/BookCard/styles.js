@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row, Column } from '../../components'; 
+import { Row, Column } from '../../components';
 import { fadeAnimations } from '../../styles';
 
 export const Container = styled(Row)`
@@ -13,7 +13,7 @@ export const Container = styled(Row)`
   @media (max-width: 414px) {
     width: 100%;
   }
-  
+
   ${fadeAnimations}
 `;
 
@@ -50,13 +50,13 @@ export const BookTile = styled.span`
   text-align: left;
 
   //prevents layout breakdown in some cases
-  ${({ useOverflow }) => 
-    useOverflow && `
+  ${({ useOverflow }) =>
+    useOverflow &&
+    `
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    `
-  }
+    `}
 `;
 
 export const BookAuthor = styled.span`

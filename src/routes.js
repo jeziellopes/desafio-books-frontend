@@ -1,6 +1,6 @@
-import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { SignIn, Books } from "./pages";
+import React from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { SignIn, Books } from './pages';
 import { useAuth } from './hooks';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -9,16 +9,18 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props =>
+      render={(props) =>
         signed ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: "/sign-in", state: { from: props.location } }} />
+          <Redirect
+            to={{ pathname: '/sign-in', state: { from: props.location } }}
+          />
         )
       }
     />
   );
-}
+};
 
 const Routes = () => (
   <BrowserRouter>

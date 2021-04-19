@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { useAuth } from '../../hooks';
-import { Container } from './styles.js'
+import { Container } from './styles.js';
 
 function LogoutButton() {
   const { logout } = useAuth();

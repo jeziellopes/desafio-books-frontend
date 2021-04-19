@@ -4,7 +4,6 @@ import { css } from 'styled-components';
  * Default Project Font
  */
 const defaultFonts = css`
-
   @font-face {
     font-family: 'Heebo';
     font-weight: 100;
@@ -53,7 +52,6 @@ const defaultFonts = css`
     src: url('/assets/fonts/heebo/Heebo-Black.ttf') format('truetype');
     -webkit-font-smoothing: antialiased;
   }
+`;
 
-`
-
-export default defaultFonts; 
+export default defaultFonts;

@@ -2,19 +2,18 @@ import apiClient from './api';
 
 export const USER_KEY = 'user';
 export const TOKEN_KEY = 'token';
-export const REFRESH_TOKEN_KEY = 'refresh_token'
+export const REFRESH_TOKEN_KEY = 'refresh_token';
 
 /**
  * Authentication services
  */
 class Auth {
-
   /**
    * Authenticate a user with email and password
    */
   static async signIn(email, password) {
     try {
-      const response = await apiClient.auth.signIn({ email, password })
+      const response = await apiClient.auth.signIn({ email, password });
 
       /**
        * Handle refrehToken with silent signIn
@@ -24,7 +23,7 @@ class Auth {
         Auth.signIn(email, password);
         return;
       }
-      
+
       /**
        * Persist authentication data
        */
@@ -36,12 +35,11 @@ class Auth {
         return user;
       } else {
         // handle not success response
-        return response.data
+        return response.data;
       }
-
     } catch (err) {
       // handle error response
-      return err.response
+      return err.response;
     }
   }
 
@@ -51,12 +49,12 @@ class Auth {
   static getUserFrom(data) {
     return {
       ...data,
-      shortName: data.name.split(' ')[0]
-    }
+      shortName: data.name.split(' ')[0],
+    };
   }
 
   /**
-   * Refresh user authenticated token 
+   * Refresh user authenticated token
    */
   static async refreshToken() {
     try {
@@ -64,7 +62,7 @@ class Auth {
       const response = await apiClient.auth.refreshToken({ refreshToken });
 
       /**
-       * Persist token refreshing data 
+       * Persist token refreshing data
        */
       if (response.status === 200) {
         Auth.setToken(response.headers.authorization);
@@ -73,10 +71,9 @@ class Auth {
         // handle not success response
         return response.data;
       }
-
     } catch (err) {
       // handle error response
-      return err.response
+      return err.response;
     }
   }
 
@@ -87,9 +84,10 @@ class Auth {
   static getUser = () => JSON.parse(localStorage.getItem(USER_KEY));
   static isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
   static getToken = () => localStorage.getItem(TOKEN_KEY);
-  static setToken = token => localStorage.setItem(TOKEN_KEY, token);
+  static setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
   static getRefreshToken = () => localStorage.getItem(REFRESH_TOKEN_KEY);
-  static setRefreshToken = refreshToken => localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken);
+  static setRefreshToken = (refreshToken) =>
+    localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken);
 
   /**
    * Logout user by cleaning storage authentication data
@@ -98,7 +96,7 @@ class Auth {
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(REFRESH_TOKEN_KEY);
-  }
+  };
 }
 
 export default Auth;

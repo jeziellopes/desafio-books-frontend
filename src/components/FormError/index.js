@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 /**
  * React Component for FormError SVG
- * 
+ *
  * @returns {React.Component}
  */
 

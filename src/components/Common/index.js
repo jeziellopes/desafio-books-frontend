@@ -32,10 +32,8 @@ export const LogoHeader = styled(Row)`
  * Default LogoTitle Styled Component
  */
 export const LogoTitle = styled.label`
-  color: ${props => props.light
-    ? props.theme.colors.white
-    : props.theme.colors.darkslategray
-  };
+  color: ${(props) =>
+    props.light ? props.theme.colors.white : props.theme.colors.darkslategray};
   font-weight: ${({ theme }) => theme.fontWeight.Light};
   font-size: ${({ theme }) => theme.fontSize.extraLarge};
   line-height: 36px;
