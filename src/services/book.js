@@ -30,6 +30,26 @@ class Book {
     );
   }
 
+  /**
+   * Returns inline author names
+   *
+   * @param {array} authors
+   * @returns
+   */
+  static inlineAuthors(authors: string[]) {
+    // const maxAuthors = authors.slice(0, 3);
+    return authors
+      .map(
+        (author) =>
+          `${Book.normalizedAuthor(
+            author,
+            authors.indexOf(author) !== authors.length - 1,
+            authors.length > 3
+          )}`
+      )
+      .join(' ');
+  }
+
   static normalizedAuthor(
     author: string,
     isLast: boolean,
@@ -60,7 +80,7 @@ class Book {
    * @returns
    */
   static hasManyAuthors(book: object) {
-    return book.authors.length > 1;
+    return book?.authors?.length > 1;
   }
 }
 

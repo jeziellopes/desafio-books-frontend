@@ -24,6 +24,7 @@ export const LogoHeader = styled(Row)`
   height: 40px;
   width: 198.4px;
   margin-bottom: 32px;
+  cursor: pointer;
 
   ${fadeAnimations}
 `;
@@ -38,4 +39,5 @@ export const LogoTitle = styled.label`
   font-size: ${({ theme }) => theme.fontSize.extraLarge};
   line-height: 36px;
   margin-left: 17px;
+  cursor: pointer;
 `;

@@ -41,13 +41,14 @@ export const BookInformations = styled(Column)`
   }
 `;
 
-export const BookTile = styled.span`
+export const BookTitle = styled.span`
   font-size: ${({ theme }) => theme.fontSize.medium};
   font-style: normal;
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  text-transform: capitalize;
 
   //prevents layout breakdown in some cases
   ${({ useOverflow }) =>

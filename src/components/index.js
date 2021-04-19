@@ -5,6 +5,7 @@ import TextInput from './TextInput';
 import LogoutButton from './LogoutButton';
 import PrevButton from './PrevButton';
 import NextButton from './NextButton';
+import CloseButton from './CloseButton';
 
 export {
   Row,
@@ -15,4 +16,5 @@ export {
   LogoutButton,
   PrevButton,
   NextButton,
+  CloseButton,
 };

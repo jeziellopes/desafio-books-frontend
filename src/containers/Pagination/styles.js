@@ -31,21 +31,19 @@ export const ActionContainer = styled(Row)`
 `;
 
 /**
- * Font-Weight Regular Label 
+ * Font-Weight Regular Label
  */
 export const PaginationLabel = styled.label`
   align-items: center;
   display: flex;
   font-size: ${({ theme }) => theme.fontSize.small};
-  font-weight: ${({ strong, theme }) => strong
-    ? theme.fontWeight.Medium
-    : theme.fontWeight.Regular
-  };
+  font-weight: ${({ strong, theme }) =>
+    strong ? theme.fontWeight.Medium : theme.fontWeight.Regular};
 `;
 
 /**
  * Font-Weight Medium Label
  */
 export const MediumLabel = styled(PaginationLabel)`
-  font-weight: ${({ theme }) => theme.fontWeight.Medium}
-`
+  font-weight: ${({ theme }) => theme.fontWeight.Medium};
+`;

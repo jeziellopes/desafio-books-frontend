@@ -38,6 +38,8 @@ const Theme = ({ children }) => {
 
       grayOpacity: 'rgba(255, 255, 255, 0.32)',
       blackOpacity: 'rgba(0, 0, 0, 0.32)',
+
+      modalOverlay: 'rgba(0, 0, 0, 0.5)',
     },
 
     // theme font-sizes
@@ -63,6 +65,8 @@ const Theme = ({ children }) => {
     shadows: {
       bookCardShadows: '0px 6px 24px 0px #54105F21',
       bookCoverShadows: '0px 6px 9px 0px #00000026',
+      bookModalShadows: '0px 16px 80px 0px #00000052',
+      bookCoverModalShadows: '0px 12px 18px 0px #0000004d',
     },
 
     // dynamic books padding based on screen width

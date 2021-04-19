@@ -12,7 +12,7 @@ export const WelcomeLabel = styled.label`
   font-size: ${({ theme }) => theme.fontSize.small};
   font-weight: ${({ theme }) => theme.fontWeight.Regular};
   margin-right: 16px;
-  
+
   @media (max-width: 700px) {
     display: none;
   }
@@ -23,8 +23,8 @@ export const WelcomeLabel = styled.label`
 export const UserLabel = styled.label`
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   margin-right: unset;
-  
+
   @media (max-width: 700px) {
     display: none;
   }
-`
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { SignIn, Books } from './pages';
+import { SignIn, Books, Blank } from './pages';
 import { useAuth } from './hooks';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -26,8 +26,9 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/sign-in" component={SignIn} />
-      <PrivateRoute path="/" component={Books} />
-      <Route path="*" component={() => <div>Page not found</div>} />
+      <PrivateRoute path="/books" component={Books} />
+      <PrivateRoute path="/book/:id/" component={Books} />
+      <Route path="*" component={Blank} />
     </Switch>
   </BrowserRouter>
 );

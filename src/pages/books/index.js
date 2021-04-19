@@ -5,21 +5,23 @@ import { UserHeader, BooksList, Pagination } from '../../containers';
 import { BooksProvider } from '../../providers';
 import { BooksContainer, BooksHeader } from './styles';
 
-const Books = () => (
-  <BooksContainer>
-    <BooksHeader>
-      <LogoHeader>
-        <Logo />
-        <LogoTitle>Books</LogoTitle>
-      </LogoHeader>
+const Books = ({ props }) => {
+  return (
+    <BooksContainer>
+      <BooksHeader>
+        <LogoHeader>
+          <Logo />
+          <LogoTitle>Books</LogoTitle>
+        </LogoHeader>
 
-      <UserHeader />
-    </BooksHeader>
-    <BooksProvider>
-      <BooksList />
-      <Pagination />
-    </BooksProvider>
-  </BooksContainer>
-);
+        <UserHeader />
+      </BooksHeader>
+      <BooksProvider>
+        <BooksList />
+        <Pagination />
+      </BooksProvider>
+    </BooksContainer>
+  );
+};
 
 export default Books;

@@ -8,15 +8,13 @@ export default function UserHeader() {
 
   return (
     <Container>
-      {user?.shortName &&
+      {user?.shortName && (
         <WelcomeLabel>
           Bem-vindo,&nbsp;
-          <UserLabel>
-            {user.shortName}
-          </UserLabel>
+          <UserLabel>{user.shortName}</UserLabel>
         </WelcomeLabel>
-      }
-      <LogoutButton/>
+      )}
+      <LogoutButton />
     </Container>
-  )
+  );
 }

@@ -28,7 +28,7 @@ const SignIn = ({ history }) => {
    * If is signed redirect to main url
    */
   useEffect(() => {
-    if (signed) history.push('/');
+    if (signed) history.push('/books');
   }, [history, signed]);
 
   /**

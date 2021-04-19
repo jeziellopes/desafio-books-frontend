@@ -7,7 +7,7 @@ import { Books } from '../services';
  */
 const BooksProvider = ({ children }) => {
   const [page, setPage] = useState(1);
-  const [amount, setAmount] = useState(12);
+  const [amount, setAmount] = useState(500);
   const [books, setBooks] = useState(null);
   const [book, setBook] = useState(null);
 
@@ -35,16 +35,18 @@ const BooksProvider = ({ children }) => {
     if (!books) showBooks();
   });
 
-  // call show all books service
+  // show all books from api service
   const showBooks = async () => {
     const books = await Books.showAll({ page, amount });
     setBooks(books);
   };
 
-  // call show book service
-  const showBook = async (id) => {
-    const book = await Books.show(id);
-    setBook(book);
+  // show book from context books
+  const showBook = (id) => {
+    if (book?.id !== id) {
+      const book = books?.data.find((book) => book.id === id);
+      setBook(book);
+    }
   };
 
   // return books context
@@ -55,6 +57,7 @@ const BooksProvider = ({ children }) => {
         page,
         amount,
         book,
+        setBook,
         showBooks,
         showBook,
         setPage,
