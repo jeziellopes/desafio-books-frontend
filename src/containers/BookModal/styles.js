@@ -44,19 +44,7 @@ export const ModalContainer = styled.div`
     width: ${({ theme }) => theme.screen.width - 32}px;
     height: ${({ theme }) => theme.screen.height - 80}px;
     max-height: unset;
-    overflow-x: hidden;
     overflow-y: scroll;
-    ::-webkit-scrollbar-track {
-      background-color: #fff;
-    }
-    ::-webkit-scrollbar {
-      width: 6px;
-      background-color: #fff;
-    }
-    ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: ${({ theme }) => theme.colors.primary};
-    }
   }
 `;
 
@@ -84,9 +72,11 @@ export const DetailsContainer = styled(Column)`
     overflow-y: scroll;
     ::-webkit-scrollbar-track {
       background-color: #fff;
+      border-radius: 10px;
     }
     ::-webkit-scrollbar {
       width: 6px;
+      border-radius: 10px;
       background-color: #fff;
     }
     ::-webkit-scrollbar-thumb {
@@ -127,9 +117,12 @@ export const BookTitle = styled.span`
   line-height: 40px;
   text-align: left;
   text-transform: capitalize;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 export const BookAuthor = styled.span`

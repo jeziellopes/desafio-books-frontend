@@ -41,7 +41,7 @@ const SignIn = ({ history }) => {
 
   return (
     <SignInContainer>
-      <Helmet title={'SignIn - Ioasys Books'} />
+      <Helmet title={'SignIn | Ioasys Books'} />
       <SignInForm>
         <LogoHeader>
           <Logo light />

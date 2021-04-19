@@ -15,10 +15,21 @@ yarn start
 yarn test
 ```
 
-- Screens (desktop)
+- Mobile (Iphone X)
 
-<p align="center">
+<div align="center">
+  <img src="./docs/screens/screen-mobile5.png" width="19.5%"/>
+  <img src="./docs/screens/screen-mobile1.png" width="19.5%"/>
+  <img src="./docs/screens/screen-mobile2.png" width="19.5%"/>
+  <img src="./docs/screens/screen-mobile3.png" width="19.5%"/>
+  <img src="./docs/screens/screen-mobile4.png" width="19.5%"/>
+  
+</div>
+
+- Desktop (1920x1080)
+
+<div align="center">
   <img src="./docs/screens/screen-sign-up.png" width="auto"/>
   <img src="./docs/screens/screen-books.png" width="auto"/>
   <img src="./docs/screens/screen-book.png" width="auto"/>
-</p>
+</div>

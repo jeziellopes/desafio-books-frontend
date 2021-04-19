@@ -8,7 +8,7 @@ import { BooksContainer, BooksHeader } from './styles';
 const Books = ({ props }) => {
   return (
     <BooksContainer>
-      <Helmet title={'Books - Ioasys Books'} />
+      <Helmet title={'Ioasys Books'} />
       <BooksHeader>
         <LogoHeader>
           <Logo />

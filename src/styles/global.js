@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     padding: 0;
   }
+
+  title {
+    text-transform: capitalize;
+  }
 `;
 
 export default GlobalStyle;

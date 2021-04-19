@@ -23,14 +23,14 @@ function FormError() {
             height="48"
             rx="4"
             fill="white"
-            fill-opacity="0.4"
+            fillOpacity="0.4"
           />
         </g>
         <g filter="url(#filter1_b)">
           <path
             d="M25 -3.49691e-07L33 8L17 8L25 -3.49691e-07Z"
             fill="white"
-            fill-opacity="0.4"
+            fillOpacity="0.4"
           />
         </g>
         <defs>
@@ -41,9 +41,9 @@ function FormError() {
             width="243"
             height="52"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImage" stdDeviation="1" />
             <feComposite
               in2="SourceAlpha"
@@ -64,9 +64,9 @@ function FormError() {
             width="20"
             height="12"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feGaussianBlur in="BackgroundImage" stdDeviation="1" />
             <feComposite
               in2="SourceAlpha"
