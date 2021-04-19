@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '../../components';
+import { Logo, Helmet } from '../../components';
 import { LogoHeader, LogoTitle } from '../../components/Common';
 import { UserHeader, BooksList, Pagination } from '../../containers';
 import { BooksProvider } from '../../providers';
@@ -8,6 +8,7 @@ import { BooksContainer, BooksHeader } from './styles';
 const Books = ({ props }) => {
   return (
     <BooksContainer>
+      <Helmet title={'Books - Ioasys Books'} />
       <BooksHeader>
         <LogoHeader>
           <Logo />

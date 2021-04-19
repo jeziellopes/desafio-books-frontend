@@ -6,6 +6,7 @@ import LogoutButton from './LogoutButton';
 import PrevButton from './PrevButton';
 import NextButton from './NextButton';
 import CloseButton from './CloseButton';
+import Helmet from './Helmet';
 
 export {
   Row,
@@ -17,4 +18,5 @@ export {
   PrevButton,
   NextButton,
   CloseButton,
+  Helmet,
 };

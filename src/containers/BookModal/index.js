@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
-import { CloseButton, Row, Column } from '../../components';
+import { CloseButton, Row, Column, Helmet } from '../../components';
 import Quotes from '../../components/Quotes';
 import { useBooks } from '../../hooks';
 import useBookModal from '../../hooks/useModal';
@@ -28,10 +28,6 @@ const BookModal = () => {
   const { book, setBook } = useBooks();
   const { show, handleClose } = useBookModal();
 
-  useEffect(() => {
-    console.log('book', book);
-  });
-
   // return modal component
   return (
     <Container show={show}>
@@ -43,6 +39,7 @@ const BookModal = () => {
           </Column>
           <DetailsContainer>
             <Column>
+              <Helmet title={`Ioasys Book - ${book?.title}`} />
               <BookTitle>{book?.title}</BookTitle>
               <BookAuthor>{Book.inlineAuthors(book?.authors ?? '')}</BookAuthor>
             </Column>

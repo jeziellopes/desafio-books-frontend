@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { SignInContainer, SignInForm, SignInInputs } from './styles';
 import { LogoHeader, LogoTitle } from '../../components/Common';
-import { Logo, FormError, TextInput } from '../../components';
+import { Logo, FormError, TextInput, Helmet } from '../../components';
 import { useAuth, useForm, useEventListener } from '../../hooks';
 import keyDownHandler from '../../utils/handler';
 
@@ -15,6 +15,7 @@ const SignIn = ({ history }) => {
   const {
     values: { email, password },
     error,
+    errors,
     validated,
     handleChange,
   } = useForm();
@@ -40,6 +41,7 @@ const SignIn = ({ history }) => {
 
   return (
     <SignInContainer>
+      <Helmet title={'SignIn - Ioasys Books'} />
       <SignInForm>
         <LogoHeader>
           <Logo light />

@@ -34,11 +34,11 @@ class Auth {
         Auth.setUser(JSON.stringify(user));
         return user;
       } else {
-        // handle not success response
+        // return not success response
         return response.data;
       }
     } catch (err) {
-      // handle error response
+      // return error response
       return err.response;
     }
   }
@@ -68,11 +68,11 @@ class Auth {
         Auth.setToken(response.headers.authorization);
         Auth.setRefreshToken(response.headers['refresh-token']);
       } else {
-        // handle not success response
+        // return not success response
         return response.data;
       }
     } catch (err) {
-      // handle error response
+      // return error response
       return err.response;
     }
   }

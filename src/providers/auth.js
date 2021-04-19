@@ -8,6 +8,7 @@ import Auth from '../services/auth';
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [signed, setSigned] = useState(Auth.isAuthenticated());
+  const [errors, setErrors] = useState(null);
 
   useEffect(() => {
     //check if user is authenticated
@@ -42,18 +43,30 @@ const AuthProvider = ({ children }) => {
   // authenticate user
   const signIn = async (email, password) => {
     const response = await Auth.signIn(email, password);
+
+    if (response.status !== 200) {
+      handleErrors(response.data);
+      return;
+    }
+
     setUser(response);
+    setErrors(null);
+  };
+
+  const handleErrors = (data) => {
+    setErrors(data?.errors);
   };
 
   // logout user
   const logout = () => {
     Auth.logout();
     setUser(null);
+    setErrors(null);
   };
 
   // return authentication context
   return (
-    <AuthContext.Provider value={{ signed, user, signIn, logout }}>
+    <AuthContext.Provider value={{ signed, user, signIn, errors, logout }}>
       {children}
     </AuthContext.Provider>
   );

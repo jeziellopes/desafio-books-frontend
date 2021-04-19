@@ -7,7 +7,7 @@ import { Books } from '../services';
  */
 const BooksProvider = ({ children }) => {
   const [page, setPage] = useState(1);
-  const [amount, setAmount] = useState(500);
+  const [amount, setAmount] = useState(20);
   const [books, setBooks] = useState(null);
   const [book, setBook] = useState(null);
 

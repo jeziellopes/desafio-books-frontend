@@ -12,7 +12,15 @@ class Form {
     const isValidEmail = Validation.isValidEmail(email);
     const isValidPassword = Validation.isValidPassword(password);
 
-    return isValidEmail && isValidPassword;
+    return {
+      isValidated: isValidEmail && isValidPassword,
+      errors: {
+        message:
+          !isValidEmail || !isValidPassword
+            ? 'Email e/ou senha inválidos.'
+            : null,
+      },
+    };
   };
 }
 

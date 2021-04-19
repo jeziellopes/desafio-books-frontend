@@ -13,12 +13,12 @@ const useEventListener = (eventName, handler, element = document) => {
 
   useEffect(() => {
     // check if can add a event listener
-    const canAdd = element && element.addEventListener
+    const canAdd = element && element.addEventListener;
 
     // if not return
     if (!canAdd) return;
 
-    // create event listener that call savedHandler 
+    // create event listener that call savedHandler
     const eventListener = (e) => savedHandler.current(e);
 
     // add event listener
@@ -29,7 +29,6 @@ const useEventListener = (eventName, handler, element = document) => {
       element.removeEventListener(eventName, eventListener);
     };
   }, [eventName, element]);
-
-}
+};
 
 export default useEventListener;
