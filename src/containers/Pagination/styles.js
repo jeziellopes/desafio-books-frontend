@@ -9,7 +9,7 @@ export const Container = styled(Row)`
   justify-content: flex-end;
   border-radius: 16px;
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     justify-content: center;
   }
 
@@ -25,7 +25,7 @@ export const ActionContainer = styled(Row)`
   justify-content: space-between;
   width: 72px;
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     width: 32px;
   }
 `;

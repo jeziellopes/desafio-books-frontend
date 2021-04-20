@@ -5,6 +5,7 @@ import Book from '../../services/book';
 
 import {
   Container,
+  CoverContainer,
   BookCover,
   BookTitle,
   BookAuthor,
@@ -17,7 +18,9 @@ export default function BookCard({ book }) {
 
   return (
     <Container onClick={() => history.push(`/book/${book.id}`)}>
-      <BookCover src={book.imageUrl} />
+      <CoverContainer>
+        <BookCover src={book.imageUrl} />
+      </CoverContainer>
       <BookInformations>
         <Column>
           <BookTitle useOverflow={Book.hasManyAuthors(book)}>

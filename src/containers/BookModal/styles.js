@@ -37,7 +37,7 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-self: flex-end;
     margin-bottom: 16px;
@@ -54,7 +54,7 @@ export const BookCover = styled.img`
   margin: 48px;
   box-shadow: ${({ theme }) => theme.shadows.bookCoverModalShadows};
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     width: ${({ theme }) => theme.screen.width - 80}px;
     height: auto;
     margin: 24px;
@@ -67,7 +67,7 @@ export const DetailsContainer = styled(Column)`
   padding-right: 48px;
   padding-bottom: 48px;
 
-  @media (min-width: 415px) {
+  @media (min-width: 769px) {
     overflow-x: hidden;
     overflow-y: scroll;
     ::-webkit-scrollbar-track {
@@ -85,7 +85,7 @@ export const DetailsContainer = styled(Column)`
     }
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     width: unset;
     padding: 0px;
     padding-left: 24px;
@@ -106,7 +106,7 @@ export const InformationRow = styled(Row)`
 export const DescriptionContainer = styled(Column)`
   padding-top: 32px;
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     padding-bottom: 32px;
   }
 `;

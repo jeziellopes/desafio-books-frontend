@@ -5,22 +5,21 @@ import { fadeAnimations } from '../../styles';
 export const Container = styled(Row)`
   background: #fff;
   height: 160px;
-  width: 272px;
   border-radius: 4px;
   box-shadow: ${({ theme }) => theme.shadows.bookCardShadows};
   cursor: pointer;
 
-  @media (max-width: 414px) {
-    width: 100%;
-  }
-
   ${fadeAnimations}
+`;
+
+export const CoverContainer = styled(Column)`
+  justify-content: center;
+  padding: 0px 16px;
 `;
 
 export const BookCover = styled.img`
   height: 122px;
   width: 81px;
-  margin: auto 16px;
   border-radius: 0px;
   box-shadow: ${({ theme }) => theme.shadows.bookCoverShadows};
   align-self: center;
@@ -28,17 +27,9 @@ export const BookCover = styled.img`
 
 export const BookInformations = styled(Column)`
   padding: 16px 16px 16px 0;
-  display: flex;
-  width: 140px;
+  width: calc(100% - 81px - 32px);
+  box-sizing: border-box;
   justify-content: space-between;
-
-  @media (max-width: 280px) {
-    width: 120px;
-  }
-
-  @media (min-width: 281px) and (max-width: 414px) {
-    width: 200px;
-  }
 `;
 
 export const BookTitle = styled.span`

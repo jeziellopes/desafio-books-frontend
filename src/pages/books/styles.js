@@ -5,24 +5,17 @@ import { fadeAnimations } from '../../styles';
 export const BooksContainer = styled.div`
   padding: 40px;
 
-  @media (max-width: 414px) {
+  padding-left: 115px;
+  padding-right: 115px;
+
+  @media (max-width: 512px) {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  @media (max-width: 1200px) {
-    padding-left: ${({ theme }) => theme.booksListPadding.grid(3)}px;
-    padding-right: ${({ theme }) => theme.booksListPadding.grid(3)}px;
-  }
-
-  @media (min-width: 1201px) and (max-width: 1699px) {
-    padding-left: ${({ theme }) => theme.booksListPadding.grid(4)}px;
-    padding-right: ${({ theme }) => theme.booksListPadding.grid(4)}px;
-  }
-
-  @media (min-width: 1700px) {
-    padding-left: ${({ theme }) => theme.booksListPadding.grid(5)}px;
-    padding-right: ${({ theme }) => theme.booksListPadding.grid(5)}px;
+  @media (min-width: 513px) and (max-width: 768px) {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 `;
 

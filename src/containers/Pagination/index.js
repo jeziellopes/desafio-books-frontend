@@ -22,7 +22,7 @@ export default function Pagination() {
   return (
     !!books?.page && (
       <Container>
-        {width <= 414 && (
+        {width <= 768 && (
           <PrevButton onClick={decreasePage} disabled={!canGoBack()} />
         )}
         <PaginationContainer>
@@ -34,7 +34,7 @@ export default function Pagination() {
           </PaginationLabel>
         </PaginationContainer>
         <ActionContainer>
-          {width > 414 && (
+          {width > 768 && (
             <PrevButton disabled={!canGoBack()} onClick={decreasePage} />
           )}
           <NextButton onClick={increasePage} disabled={!canGoNext()} />

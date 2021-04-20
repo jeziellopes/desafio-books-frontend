@@ -32,3 +32,10 @@ test('deve retornar uma lista de nomes de autores normalizados', async () => {
   const result = Book.normalizedAuthors(authors);
   expect(result).toStrictEqual(normalized);
 });
+
+test('deve retornar uma lista de nomes de autores inalterada', async () => {
+  const authors = ['Robert Cecil Martin', 'Erick Evans'];
+  const normalized = ['Robert C. Martin,', 'Erick Evans'];
+  const result = Book.normalizedAuthors(authors);
+  expect(result).toStrictEqual(normalized);
+});

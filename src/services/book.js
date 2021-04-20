@@ -25,7 +25,7 @@ class Book {
         `${Book.normalizedAuthor(
           author,
           maxAuthors.indexOf(author) !== maxAuthors.length - 1,
-          maxAuthors.length >= 2
+          authors.length > 2
         )}`
     );
   }
@@ -37,7 +37,6 @@ class Book {
    * @returns
    */
   static inlineAuthors(authors: string[]) {
-    // const maxAuthors = authors.slice(0, 3);
     return authors
       .map(
         (author) =>
