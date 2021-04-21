@@ -63,7 +63,7 @@ const BookModal = () => {
               </InformationRow>
               <InformationRow>
                 <BookLabels>Título Original</BookLabels>
-                <BookDetails>{book.title}</BookDetails>
+                <BookDetails capitalize>{book.title}</BookDetails>
               </InformationRow>
               <InformationRow>
                 <BookLabels>ISBN-10</BookLabels>

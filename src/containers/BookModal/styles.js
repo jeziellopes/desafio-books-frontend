@@ -149,5 +149,5 @@ export const BookDetails = styled.span`
   font-weight: ${({ theme }) => theme.fontWeight.Regular};
   line-height: 20px;
   text-align: justify;
-  text-transform: capitalize;
+  text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'unset')};
 `;
